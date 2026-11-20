@@ -39,7 +39,7 @@ async def _main(args: argparse.Namespace) -> int:
     else:
         print(result["report"])
     if args.out:
-        Path(args.out).write_text(result["report"], encoding="utf-8")
+        Path(args.out).write_text(result["report"], encoding="utf-8", newline="\n")
         print(f"Report saved to {args.out}", file=sys.stderr)
     return 0
 
